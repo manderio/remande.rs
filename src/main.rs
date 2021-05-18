@@ -1,10 +1,13 @@
 use notify_rust::Notification;
 
-fn main() {}
+fn main() {
+    notif()
+}
 
 fn notif() {
     Notification::new()
         .summary("Test")
         .body("This is the body")
-        .show();
+        .show()
+        .execpt("Failed to send notification");
 }
