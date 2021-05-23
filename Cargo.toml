@@ -9,3 +9,4 @@ edition = "2018"
 [dependencies]
 notify-rust = "4"
 cron = "0.9.0"
+structopt = "0.3"

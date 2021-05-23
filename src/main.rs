@@ -1,5 +1,7 @@
 use notify_rust::Notification;
 use std::io;
+use std::path::PathBuf;
+use structopt::StructOpt;
 
 enum Item {
     Remander(Remander), // rename these
@@ -19,10 +21,10 @@ struct ToDo {
     remander: Option<Remander>,
 }
 
-// struct ItemList {
-//     title: String,
-//     items: [Item],
-// }
+struct NamedItemList {
+    title: String,
+    items: Vec<Item>,
+}
 
 fn create_todo(title: String, contents: String, remander: Option<Remander>) -> ToDo {
     ToDo {
@@ -34,6 +36,10 @@ fn create_todo(title: String, contents: String, remander: Option<Remander>) -> T
 
 fn create_remander(title: String, contents: String) -> Remander {
     Remander { title, contents }
+}
+
+fn create_list(title: String, items: Vec<Item>) -> NamedItemList {
+    NamedItemList { title, items }
 }
 
 fn main() {
