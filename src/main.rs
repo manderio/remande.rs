@@ -26,6 +26,18 @@ struct NamedItemList {
     items: Vec<Item>,
 }
 
+struct Opt {
+    // debug mode
+    #[structopt(long)]
+    debug: bool, 
+
+    // itemType
+    #[structopt(short = "t", long = "type")]
+    itemType: String,
+
+
+}
+
 fn create_todo(title: String, contents: String, remander: Option<Remander>) -> ToDo {
     ToDo {
         title,
@@ -42,19 +54,21 @@ fn create_list(title: String, items: Vec<Item>) -> NamedItemList {
     NamedItemList { title, items }
 }
 
+//TODO: Create structOpt arguments
 fn main() {
-    let remander = create_remander(arg(), arg()); // get the arguments required here
+    let remander = create_remander(arg(), arg()); // switch arg() for structopt
 
     notif(&remander)
 }
 
-fn arg() -> String {
-    let mut buffer = String::new(); // fix this and make it work please
-    io::stdin() // understand this and work on fixing this
-        .read_line(&mut buffer)
-        .expect("this doesn't work");
-    buffer
-}
+// yeet in favor of structopt
+// fn arg() -> String {
+//     let mut buffer = String::new(); // fix this and make it work please
+//     io::stdin() // understand this and work on fixing this
+//         .read_line(&mut buffer)
+//         .expect("this doesn't work");
+//     buffer
+// }
 
 fn notif(remander: &Remander) {
     Notification::new()
