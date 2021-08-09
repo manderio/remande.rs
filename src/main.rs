@@ -26,6 +26,11 @@ struct NamedItemList {
     items: Vec<Item>,
 }
 
+struct Opt {
+    // debug
+    #[
+}
+
 fn create_todo(title: String, contents: String, remander: Option<Remander>) -> ToDo {
     ToDo {
         title,
@@ -48,13 +53,13 @@ fn main() {
     notif(&remander)
 }
 
-fn arg() -> String {
-    let mut buffer = String::new(); // fix this and make it work please
-    io::stdin() // understand this and work on fixing this
-        .read_line(&mut buffer)
-        .expect("this doesn't work");
-    buffer
-}
+// fn arg() -> String {
+//     let mut buffer = String::new(); // fix this and make it work please
+//     io::stdin() // understand this and work on fixing this
+//         .read_line(&mut buffer)
+//         .expect("this doesn't work");
+//     buffer
+// }
 
 fn notif(remander: &Remander) {
     Notification::new()
