@@ -1,7 +1,7 @@
 [package]
 name = "remander"
 version = "0.1.0"
-authors = ["manderio <59826300+manderio@users.noreply.github.com>"]
+authors = ["manderio <git@mander.io>"]
 edition = "2018"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
